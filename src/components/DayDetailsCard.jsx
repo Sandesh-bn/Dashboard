@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { LocationDropDown } from "./LocationDropDown";
 import { TypeDropDown } from "./TypeDropDown";
@@ -20,7 +19,7 @@ export default function DayDetailsCard({ weather, location, setLocation, type, s
 
     if (!weather) {
         return (
-            <div className="w-[500px] h-full shrink-0 p-4 flex flex-col overflow-hidden">
+            <div className="h-full w-full p-4 flex flex-col overflow-hidden">
                 {/* Header */}
                 <Skeleton className="h-8 w-48 mb-6" />
 
@@ -61,33 +60,33 @@ export default function DayDetailsCard({ weather, location, setLocation, type, s
     const gradient = weatherclassMap[weather.weather[0].description]
     console.log(weather.weather[0].description, ' ', gradient);
     return (
-        <div className={`w-[500px] h-full shrink-0 text-gray-500 p-4 flex flex-col overflow-hidden ${gradient}`}>
+        <div className={`h-full w-full text-gray-500 p-4 flex flex-col overflow-hidden ${gradient}`}>
             {/* Header */}
             {/* <h2 className="text-1xl font-bold shrink-0 items-center"> */}
-            <div className="flex gap-10">
+            <div className="flex flex-wrap gap-3 sm:gap-4 lg:gap-5">
                 <LocationDropDown className="items-center" location={location} setLocation={setLocation} />
                 <TypeDropDown type={type} setType={setType} />
             </div>
             {/* </h2> */}
 
             {/* Main Content */}
-            <div className="flex-1 flex gap-5  items-center justify-center min-h-0">
-                <div className="text-5xl my-1 xl:text-4xl font-semibold leading-none">
+            <div className="flex-1 flex flex-wrap gap-4 sm:gap-5 items-center justify-center min-h-0 py-6 lg:py-3">
+                <div className="text-4xl sm:text-5xl xl:text-4xl my-1 font-semibold leading-none">
                     {Math.round(weather.main.temp)}°F
                 </div>
 
                 <img
                     src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
                     alt={weather.weather[0].description}
-                    className="w-20 h-20"
+                    className="w-16 h-16 sm:w-20 sm:h-20"
                 />
 
-                <div className="text-xl font-medium text-center capitalize">
+                <div className="text-lg sm:text-xl font-medium text-center capitalize">
                     {weather.weather[0].description}
                 </div>
 
 
-                <div className="text-xl font-semibold mt-0 text-green-600">
+                <div className="text-lg sm:text-xl font-semibold mt-0 text-green-600">
                     <p className="text-sm text-green-400">
                         Local Time
                     </p>
@@ -99,13 +98,13 @@ export default function DayDetailsCard({ weather, location, setLocation, type, s
             </div>
 
             {/* Bottom Stats */}
-            <div className="grid grid-cols-3 gap-2 pt-4 text-center shrink-0">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 text-center shrink-0">
                 <div>
                     <p className="text-sm text-gray-400">
                         Feels like
                     </p>
 
-                    <p className="text-2xl font-medium mt-1">
+                    <p className="text-xl sm:text-2xl font-medium mt-1">
                         {Math.round(weather.main.feels_like)}°F
                     </p>
                 </div>
@@ -115,7 +114,7 @@ export default function DayDetailsCard({ weather, location, setLocation, type, s
                         Humidity
                     </p>
 
-                    <p className="text-2xl text-violet-600 font-medium mt-1">
+                    <p className="text-xl sm:text-2xl text-violet-600 font-medium mt-1">
                         {weather.main.humidity}%
                     </p>
                 </div>
@@ -125,7 +124,7 @@ export default function DayDetailsCard({ weather, location, setLocation, type, s
                         Wind Speed
                     </p>
 
-                    <p className="text-2xl text-blue-600 font-medium mt-1">
+                    <p className="text-xl sm:text-2xl text-blue-600 font-medium mt-1">
                         {Math.round(weather.wind.speed)} mph
                     </p>
                 </div>

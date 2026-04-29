@@ -30,7 +30,7 @@ export function LocationDropDown({location, setLocation}) {
                 <SelectGroup>
                     <SelectLabel>City</SelectLabel>
                     {locations.map((location) => (
-                        <SelectItem value={location}>{location}</SelectItem>
+                        <SelectItem key={location} value={location}>{location}</SelectItem>
                     ))}
                 </SelectGroup>
             </SelectContent>

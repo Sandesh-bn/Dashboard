@@ -35,7 +35,16 @@ function ChangeMapView({ coords }) {
 
   useEffect(() => {
     map.setView(coords, 11);
+    map.invalidateSize();
   }, [coords, map]);
+
+  useEffect(() => {
+    const resizeMap = () => map.invalidateSize();
+    resizeMap();
+    window.addEventListener("resize", resizeMap);
+
+    return () => window.removeEventListener("resize", resizeMap);
+  }, [map]);
 
   return null;
 }

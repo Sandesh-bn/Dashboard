@@ -21,7 +21,7 @@ export function TypeDropDown({type, setType}) {
                 <SelectGroup>
                     <SelectLabel>Map Type</SelectLabel>
                     {types.map((type) => (
-                        <SelectItem className='capitalize' value={type}>{type.split('_')[0]}</SelectItem>
+                        <SelectItem key={type} className='capitalize' value={type}>{type.split('_')[0]}</SelectItem>
                     ))}
                 </SelectGroup>
             </SelectContent>

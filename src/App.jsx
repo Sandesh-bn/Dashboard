@@ -1,10 +1,5 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
-import { Button } from "@/components/ui/button"
-import { LocationDropDown } from './components/LocationDropDown'
 import CityMap from './components/CityMap'
 import DayDetailsCard from './components/DayDetailsCard'
 import HourlyForecast from './components/HourlyForecast'
@@ -43,42 +38,42 @@ export default function App() {
 
 
   return (
-      <div className="h-screen w-screen overflow-hidden flex flex-col p-5 gap-5 light-background">
+    <div className="min-h-screen w-full overflow-x-hidden flex flex-col p-3 sm:p-4 lg:h-screen lg:overflow-hidden lg:p-5 gap-4 lg:gap-5 light-background">
       {/* Row 1 */}
       <section
         id="location"
-        className="h-1/2 min-h-0 flex overflow-hidden gap-7"
+        className="flex min-h-0 flex-col gap-4 lg:h-1/2 lg:flex-row lg:overflow-hidden lg:gap-7"
       >
         {/* Left Column */}
-        <div className="flex-1  overflow-hidden light-card">
-            <CityMap location={location} type={type} />
+        <div className="h-[320px] shrink-0 overflow-hidden rounded-[10px] light-card sm:h-[380px] lg:h-auto lg:min-h-0 lg:flex-1 lg:shrink">
+          <CityMap location={location} type={type} />
         </div>
 
         {/* Right Column */}
-        <div className="w-[500px] shrink-0 border rounded-[10px]  overflow-hidden  light-card">
-            <DayDetailsCard weather={weather} type={type} setType={setType} location={location} setLocation={setLocation} />
+        <div className="w-full shrink-0 overflow-hidden rounded-[10px] border light-card lg:w-[min(500px,36vw)] xl:w-[500px]">
+          <DayDetailsCard weather={weather} type={type} setType={setType} location={location} setLocation={setLocation} />
         </div>
       </section>
 
       {/* Row 2 */}
       <section
         id="weather"
-        className="h-1/2 min-h-0 flex overflow-hidden gap-7"
+        className="flex min-h-0 flex-col gap-4 lg:h-1/2 lg:flex-row lg:overflow-hidden lg:gap-7"
       >
         {/* Left Column */}
         <div
           id="weather-left"
-          className="flex-1 shrink-0 border rounded-[10px] overflow-x-auto overflow-y-hidden  light-card"
+          className="min-h-[360px] flex-1 overflow-x-auto overflow-y-hidden rounded-[10px] border light-card lg:min-h-0"
         >
-          <div className="flex flex-col min-w-[800px] h-full  light-card">
+          <div className="flex h-full min-w-[640px] flex-col sm:min-w-[720px] lg:min-w-[800px] light-card">
             {/* Top Row */}
-            <div className="flex-1  p-4">
-              <HourlyForecast location={location}/>
+            <div className="min-h-0 flex-1 p-3 sm:p-4">
+              <HourlyForecast location={location} />
             </div>
 
             {/* Bottom Row */}
-            <div className="flex-1 p-4 pt-1">
-              <WeeklyForecast location={location}/>
+            <div className="min-h-0 flex-1 p-3 pt-1 sm:p-4 sm:pt-1">
+              <WeeklyForecast location={location} />
             </div>
           </div>
         </div>
@@ -86,9 +81,9 @@ export default function App() {
         {/* Right Column */}
         <div
           id="weather-right"
-          className="w-[500px] border rounded-[10px] overflow-hidden  lightgray-gradient"
+          className="w-full shrink-0 overflow-hidden rounded-[10px] border lightgray-gradient lg:w-[min(500px,36vw)] xl:w-[500px]"
         >
-         <DetailedInfo loading={loading} weather={weather}/>
+          <DetailedInfo loading={loading} weather={weather} />
         </div>
       </section>
     </div>
