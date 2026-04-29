@@ -73,8 +73,8 @@ export default function DayDetailsCard({ weather, location, setLocation, type, s
                 </div>
 
 
-                <div className="text-xl font-semibold mt-0">
-                    <p className="text-sm text-gray-400">
+                <div className="text-xl font-semibold mt-0 text-green-600">
+                    <p className="text-sm text-green-400">
                         Local Time
                     </p>
                     {new Date().toLocaleTimeString([], {
@@ -97,21 +97,21 @@ export default function DayDetailsCard({ weather, location, setLocation, type, s
                 </div>
 
                 <div>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-violet-400">
                         Humidity
                     </p>
 
-                    <p className="text-2xl font-medium mt-1">
+                    <p className="text-2xl text-violet-600 font-medium mt-1">
                         {weather.main.humidity}%
                     </p>
                 </div>
 
                 <div>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-blue-400">
                         Wind Speed
                     </p>
 
-                    <p className="text-2xl font-medium mt-1">
+                    <p className="text-2xl text-blue-600 font-medium mt-1">
                         {Math.round(weather.wind.speed)} mph
                     </p>
                 </div>
