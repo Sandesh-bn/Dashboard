@@ -134,10 +134,39 @@ body {
 
 .light-background {
   background: rgb(246, 245, 245);
+  background: white;
 }
 
 .light-card {
-  background: white;
+  /* background: white; */
+  /* background: linear-gradient(180deg, #fffef5 0, #fefce8 30%, #ffffff 100%);
+  border-color: #fde047 */
+}
+
+.yellow-gradient {
+  background: linear-gradient(180deg, #fffef5 0, #fefce8 30%, #ffffff 100%);
+  border-color: #fde047;
+}
+
+.lightblue-gradient {
+  /* background: linear-gradient(180deg, #f5fbff 0, #e8fafe 30%, #ffffff 100%);
+  border-color: #47ecfd; */
+  background: linear-gradient(180deg, #f5fbff 0, #e8fafe 30%, #ffffff 100%);
+  border-color: #47ecfd;
+}
+
+.lightgray-gradient {
+  background: linear-gradient(180deg, #fafbfc 0, #f1f5f9 30%, #ffffff 100%);
+  border-color: rgb(187, 186, 186);
+}
+
+.mediumgray-gradient {
+  background: linear-gradient(180deg, #eaf3f9 0, #bfc2c2 30%, #ffffff 100%);
+}
+
+.lightteal-gradient {
+  background: linear-gradient(180deg, #f5fbff 0, #ede8fe 30%, #ffffff 100%);
+  border-color: #47ecfd;
 }
 
 /* horizontal scrollbar */

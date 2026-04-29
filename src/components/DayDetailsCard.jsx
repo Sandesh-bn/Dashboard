@@ -5,7 +5,19 @@ import { LocationDropDown } from "./LocationDropDown";
 import { TypeDropDown } from "./TypeDropDown";
 
 export default function DayDetailsCard({ weather, location, setLocation, type, setType }) {
-    
+    const weatherclassMap = {
+        "clear sky": "yellow-gradient",
+        "few clouds": "lightblue-gradient",
+        "scattered clouds": "lightgray-gradient",
+        "broken clouds": "mediumgray-gradient",
+        "shower rain": "lighgray-gradient",
+        "rain": "lightblue-gradient",
+        "thunderstorm": "yellow-gradient",
+        "snow": "lightgray-gradient",
+        "mist": "lightteal-gradient",
+        "light intensity shower rain": "lightteal-gradient"
+    };
+
     if (!weather) {
         return (
             <div className="w-[500px] h-full shrink-0 p-4 flex flex-col overflow-hidden">
@@ -46,13 +58,15 @@ export default function DayDetailsCard({ weather, location, setLocation, type, s
         );
     }
 
+    const gradient = weatherclassMap[weather.weather[0].description]
+    console.log(weather.weather[0].description, ' ', gradient);
     return (
-        <div className="w-[500px] h-full shrink-0 text-gray-500 p-4 flex flex-col overflow-hidden">
+        <div className={`w-[500px] h-full shrink-0 text-gray-500 p-4 flex flex-col overflow-hidden ${gradient}`}>
             {/* Header */}
             {/* <h2 className="text-1xl font-bold shrink-0 items-center"> */}
             <div className="flex gap-10">
                 <LocationDropDown className="items-center" location={location} setLocation={setLocation} />
-                <TypeDropDown type={type} setType={setType}/>
+                <TypeDropDown type={type} setType={setType} />
             </div>
             {/* </h2> */}
 

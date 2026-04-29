@@ -77,7 +77,7 @@ export default function App() {
             </div>
 
             {/* Bottom Row */}
-            <div className="flex-1 p-4">
+            <div className="flex-1 p-4 pt-1">
               <WeeklyForecast location={location}/>
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function App() {
         {/* Right Column */}
         <div
           id="weather-right"
-          className="w-[500px] border rounded-[10px] overflow-hidden  light-card"
+          className="w-[500px] border rounded-[10px] overflow-hidden  lightgray-gradient"
         >
          <DetailedInfo loading={loading} weather={weather}/>
         </div>

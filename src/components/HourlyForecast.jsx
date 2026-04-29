@@ -66,7 +66,7 @@ export default function HourlyForecast({ location }) {
     }
 
     return (
-        <div className="h-full w-full overflow-x-auto custom-scrollbar overflow-y-hidden black">
+        <div className="h-full w-full overflow-x-auto custom-scrollbar overflow-y-hidden black pb-2">
             <div className="flex h-full min-w-max gap-10 items-center ">
                 <h3>Hourly Forecast</h3>
                 {forecast.map((item, index) => (
