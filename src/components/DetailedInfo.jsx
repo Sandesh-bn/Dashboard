@@ -52,8 +52,8 @@ export default function DetailedInfo({ weather, loading }) {
                 key={index}
                 className="flex items-center justify-between"
               >
-                <Skeleton className="h-5 w-40" />
-                <Skeleton className="h-5 w-20" />
+                <Skeleton className="h-4 w-40" />
+                <Skeleton className="h-4 w-20" />
               </div>
             ))
           : weatherInfo.map((item) => (
@@ -61,11 +61,11 @@ export default function DetailedInfo({ weather, loading }) {
                 key={item.label}
                 className="flex items-center justify-between"
               >
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 text-xs">
                   {item.label}
                 </p>
 
-                <p className="text-sm font-medium">
+                <p className="text-xs font-medium">
                   {item.value}
                 </p>
               </div>

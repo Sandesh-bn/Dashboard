@@ -134,11 +134,11 @@ body {
 
 .light-background {
   background: rgb(246, 245, 245);
-  background: white;
+  /* background: white; */
 }
 
 .light-card {
-  /* background: white; */
+  background: white;
   /* background: linear-gradient(180deg, #fffef5 0, #fefce8 30%, #ffffff 100%);
   border-color: #fde047 */
 }
