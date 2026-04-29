@@ -162,7 +162,7 @@ body {
 
 /* Firefox */
 .custom-scrollbar {
-  scrollbar-color: #f8f6f6 #ebebeb;
+  scrollbar-color: #f8f6f6 #d3dde1;
   scrollbar-width: thin;
 }
 
