@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import imagemap from "../assets/imagemap";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -80,12 +81,14 @@ export default function HourlyForecast({ location }) {
                         </p>
 
                         {/* Dot */}
-                        <div
+                        {/* <div
                             className={`w-4 h-4 rounded-full my-4 ${item.active
                                     ? "bg-orange-400"
                                     : "bg-gray-600"
                                 }`}
-                        />
+                        /> */}
+
+                        <img src={imagemap['default']}/>
 
                         {/* Temp */}
                         <p className="text-gray-600 text-sm">

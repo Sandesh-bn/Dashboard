@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import imagemap from "../assets/imagemap";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -62,7 +63,7 @@ export default function WeeklyForecast({ location }) {
       <div className="h-full w-full overflow-x-auto overflow-y-hidden bg-gray">
         <div className="flex h-full min-w-max gap-10 items-center">
             <h3>Weekly Forecast</h3>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {Array.from({ length: 7 }).map((_, index) => (
             <div
               key={index}
               className="flex flex-col items-center justify-center gap-3 shrink-0"
@@ -98,11 +99,14 @@ export default function WeeklyForecast({ location }) {
             </p>
 
             {/* Icon */}
-            <img
+            {/* <img
               src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`}
               alt={item.description}
               className="w-12 h-12 my-2"
-            />
+            /> */}
+
+            <img src={imagemap[item.description]} className="h-20"/>
+
 
             {/* Temp */}
             <p className="text-gray text-sm">

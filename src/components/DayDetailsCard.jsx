@@ -2,6 +2,8 @@
 import { Skeleton } from "@/components/ui/skeleton";
 import { LocationDropDown } from "./LocationDropDown";
 import { TypeDropDown } from "./TypeDropDown";
+import imagemap from "../assets/imagemap";
+
 
 export default function DayDetailsCard({ weather, location, setLocation, type, setType }) {
     const weatherclassMap = {
@@ -58,6 +60,7 @@ export default function DayDetailsCard({ weather, location, setLocation, type, s
     }
 
     const gradient = weatherclassMap[weather.weather[0].description]
+    const icon = imagemap[weather.weather[0].description]
     console.log(weather.weather[0].description, ' ', gradient);
     return (
         <div className={`h-full w-full text-gray-500 p-4 flex flex-col overflow-hidden ${gradient}`}>
@@ -75,13 +78,14 @@ export default function DayDetailsCard({ weather, location, setLocation, type, s
                     {Math.round(weather.main.temp)}°F
                 </div>
 
-                <img
+                {/* <img
                     src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
                     alt={weather.weather[0].description}
                     className="w-16 h-16 sm:w-20 sm:h-20"
-                />
+                /> */}
+                <img src={icon} className="h-20"/>
 
-                <div className="text-lg sm:text-xl font-medium text-center capitalize">
+                <div className="text-sm sm:text-sm font-medium text-center capitalize">
                     {weather.weather[0].description}
                 </div>
 
