@@ -63,17 +63,17 @@ export default function DayDetailsCard({ weather, location, setLocation, type, s
     const icon = imagemap[weather.weather[0].description]
     console.log(weather.weather[0].description, ' ', gradient);
     return (
-        <div className={`h-full w-full text-gray-500 p-4 flex flex-col overflow-hidden ${gradient}`}>
+        <div className={`h-full w-full text-gray-500 p-2 flex flex-col overflow-hidden ${gradient}`}>
             {/* Header */}
             {/* <h2 className="text-1xl font-bold shrink-0 items-center"> */}
-            <div className="flex flex-wrap gap-3 sm:gap-4 lg:gap-5">
+            <div className="flex pt-2 flex-wrap gap-3 sm:gap-4 lg:gap-5">
                 <LocationDropDown className="items-center" location={location} setLocation={setLocation} />
                 <TypeDropDown type={type} setType={setType} />
             </div>
             {/* </h2> */}
 
             {/* Main Content */}
-            <div className="flex-1 flex flex-wrap gap-4 sm:gap-5 items-center justify-center min-h-0 py-6 lg:py-3">
+            <div className="flex-1 flex flex-wrap gap-2 sm:gap-5 items-center justify-center min-h-0 py-6 lg:py-3">
                 <div className="text-4xl sm:text-5xl xl:text-4xl my-1 font-semibold leading-none">
                     {Math.round(weather.main.temp)}°F
                 </div>
@@ -83,12 +83,13 @@ export default function DayDetailsCard({ weather, location, setLocation, type, s
                     alt={weather.weather[0].description}
                     className="w-16 h-16 sm:w-20 sm:h-20"
                 /> */}
-                <img src={icon} className="h-20"/>
+                <div>
+                    <img src={icon} className="h-20" />
 
-                <div className="text-sm sm:text-sm font-medium text-center capitalize">
-                    {weather.weather[0].description}
+                    <div className="text-sm sm:text-sm font-bold text-center capitalize">
+                        {weather.weather[0].description}
+                    </div>
                 </div>
-
 
                 <div className="text-lg sm:text-xl font-semibold mt-0 text-green-600">
                     <p className="text-sm text-green-400">
